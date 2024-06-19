@@ -12,6 +12,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        title: 'Sign in - Order Management',
         component: LoginComponent
       }
     ]
@@ -22,6 +23,7 @@ export const routes: Routes = [
     children: [
       {
         path: '',
+        title: 'Dashboard - Order Management',
         component: DashboardComponent
       }, 
     ]
