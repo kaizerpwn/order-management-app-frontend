@@ -17,6 +17,6 @@ export class UserService {
   }
 
   login(loginRequest: LoginRequest): Observable<User> {
-    return this.http.post<User>(`${baseUrl}/users`, loginRequest);
+    return this.http.post<User>(`${baseUrl}/users/login`, loginRequest);
   }
 }

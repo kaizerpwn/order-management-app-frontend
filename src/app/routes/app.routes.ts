@@ -18,6 +18,17 @@ export const routes: Routes = [
     ]
   },
   {
+    path: 'login',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
+        title: 'Sign in - Order Management',
+        component: LoginComponent
+      }
+    ]
+  },
+  {
     path: 'dashboard',
     component: DashboardLayoutComponent,
     children: [
@@ -27,7 +38,8 @@ export const routes: Routes = [
         component: DashboardComponent
       }, 
     ]
-  }
+  },
+  { path: '**', redirectTo: '/login' }
 ];
 
 @NgModule({
