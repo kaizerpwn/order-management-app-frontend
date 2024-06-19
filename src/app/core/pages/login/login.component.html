@@ -8,18 +8,16 @@
           <div class="row">
             <div class="col-12">
               <div class="text-center mb-5">
-                <a href="#!">
-                  <img src="/logo.png" alt="OM Logo" width="500" height="300" />
-                </a>
+                <img src="/logo.png" alt="OM Logo" width="500" height="300" />
               </div>
             </div>
           </div>
-          <form action="#!">
+          <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
             <div class="row gy-3 gy-md-4 overflow-hidden">
               <div class="col-12">
-                <label for="username" class="form-label"
-                  >Username <span class="text-danger">*</span></label
-                >
+                <label for="username" class="form-label">
+                  Username <span class="text-danger">*</span>
+                </label>
                 <div class="input-group">
                   <span class="input-group-text">
                     <svg
@@ -40,15 +38,36 @@
                     type="text"
                     class="form-control"
                     name="username"
+                    formControlName="username"
                     id="username"
-                    required
                   />
                 </div>
-              </div>
-              <div class="col-12">
-                <label for="password" class="form-label"
-                  >Password <span class="text-danger">*</span></label
+                <div
+                  *ngIf="
+                    loginForm.get('username')?.touched &&
+                    loginForm.get('username')?.invalid
+                  "
+                  class="text-danger mt-2"
                 >
+                  <div *ngIf="loginForm.get('username')?.errors?.['required']">
+                    Username is required.
+                  </div>
+                  <div *ngIf="loginForm.get('username')?.errors?.['minlength']">
+                    Username must be at least 3 characters long.
+                  </div>
+                  <div *ngIf="loginForm.get('username')?.errors?.['maxlength']">
+                    Username must be at most 20 characters long.
+                  </div>
+                  <div *ngIf="loginForm.get('username')?.errors?.['pattern']">
+                    Username can only contain alphanumeric characters.
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="password" class="form-label">
+                  Password <span class="text-danger">*</span>
+                </label>
                 <div class="input-group">
                   <span class="input-group-text">
                     <svg
@@ -68,12 +87,26 @@
                     type="password"
                     class="form-control"
                     name="password"
+                    formControlName="password"
                     id="password"
-                    value=""
-                    required
                   />
                 </div>
+                <div
+                  *ngIf="
+                    loginForm.get('password')?.touched &&
+                    loginForm.get('password')?.invalid
+                  "
+                  class="text-danger mt-2"
+                >
+                  <div *ngIf="loginForm.get('password')?.errors?.['required']">
+                    Password is required.
+                  </div>
+                  <div *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                    Password must be at least 5 characters long.
+                  </div>
+                </div>
               </div>
+
               <div class="col-12">
                 <div class="d-grid">
                   <button
