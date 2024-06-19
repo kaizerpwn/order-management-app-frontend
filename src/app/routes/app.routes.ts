@@ -1,11 +1,35 @@
-import { Routes } from "@angular/router";
-import { LoginComponent } from "../core/pages/login/login.component";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router'; 
+import { AuthLayoutComponent } from '../shared/components/layouts/auth-layout/auth-layout.component';
+import { LoginComponent } from '../core/pages/login/login.component';
+import { DashboardLayoutComponent } from '../shared/components/layouts/dashboard-layout/dashboard-layout.component';
+import { DashboardComponent } from '../core/pages/dashboard/dashboard.component';
 
 export const routes: Routes = [
-    {
-        path:"",
-        pathMatch: 'full',
-        title:'Login',
+  {
+    path: '',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
         component: LoginComponent
-    }
+      }
+    ]
+  },
+  {
+    path: 'dashboard',
+    component: DashboardLayoutComponent,
+    children: [
+      {
+        path: '',
+        component: DashboardComponent
+      }, 
+    ]
+  }
 ];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }

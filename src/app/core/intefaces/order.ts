@@ -1,5 +1,5 @@
 import { Address } from "./address";
-import { OrderItem } from "./order_item";
+import { OrderItem } from "./order-item";
 
 export interface Order {
     user_id:          number;
