@@ -24,7 +24,7 @@
                         <th scope="col">Actions</th>
                       </tr>
                     </thead>
-                    <tbody>
+                    <tbody *ngFor="let user of users">
                       <tr>
                         <td>
                           <img
@@ -34,16 +34,26 @@
                               background-color: #a7c957;
                               border-radius: 50%;
                             "
-                            src="https://api.dicebear.com/8.x/pixel-art/svg?seed=ibrahim+okic"
+                            src="https://api.dicebear.com/8.x/pixel-art/svg?seed={{
+                              user.first_name + user.last_name
+                            }}"
                             alt=""
                           />
                         </td>
-                        <td>ibrahim</td>
-                        <td>ibrahim&#64;gmail.com</td>
-                        <td>user</td>
-                        <td>Ibrahim Okić</td>
-                        <td>2024-03-22</td>
-                        <td>Gornji Moranjci Bb, 75350 Srebrenik</td>
+                        <td>{{ user.username }}</td>
+                        <td>{{ user.email }}</td>
+                        <td>{{ user.role }}</td>
+                        <td>{{ user.first_name + " " + user.last_name }}</td>
+                        <td>{{ user.birth_date }}</td>
+                        <td>
+                          {{
+                            user.address.street +
+                              ", " +
+                              user.address.zip_code +
+                              ", " +
+                              user.address.city
+                          }}
+                        </td>
                         <td>
                           <svg
                             fill="#000000"
