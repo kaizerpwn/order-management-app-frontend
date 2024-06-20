@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { AppState } from '../../../shared/store/app.state';
 import * as UserActions from '../../../shared/store/user/user.actions';
+import { AuthService } from '../../services/auth.service';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -20,7 +21,7 @@ export class LoginComponent {
   errorMessage: string = '';
   successMessage: string = '';
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router, private store: Store<AppState>) {
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private store: Store<AppState>) {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern(/^[a-zA-Z0-9]+$/)]],
       password: ['', [Validators.required, Validators.minLength(5)]]
@@ -34,7 +35,7 @@ export class LoginComponent {
         password: this.loginForm.value.password
       };
 
-      this.userService.login(loginRequest).subscribe(
+      this.authService.login(loginRequest).subscribe(
         (response) => {
           this.errorMessage = '';
           this.successMessage = 'Successfully logged in.'; 
