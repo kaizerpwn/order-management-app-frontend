@@ -5,7 +5,9 @@ import { LoginRequest } from '../../types/auth/login-request';
 import { UserService } from '../../services/user.service'; 
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
-
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../shared/store/app.state';
+import * as UserActions from '../../../shared/store/user/user.actions';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -18,7 +20,7 @@ export class LoginComponent {
   errorMessage: string = '';
   successMessage: string = '';
 
-  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router) {
+  constructor(private formBuilder: FormBuilder, private userService: UserService, private router: Router, private store: Store<AppState>) {
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20), Validators.pattern(/^[a-zA-Z0-9]+$/)]],
       password: ['', [Validators.required, Validators.minLength(5)]]
@@ -35,8 +37,8 @@ export class LoginComponent {
       this.userService.login(loginRequest).subscribe(
         (response) => {
           this.errorMessage = '';
-          this.successMessage = 'Successfully logged in.';
-          localStorage.setItem('loggedUser', JSON.stringify(response));
+          this.successMessage = 'Successfully logged in.'; 
+          this.store.dispatch(UserActions.loginSuccess({ user: response })); 
 
           setTimeout(() => {
             this.successMessage = '';

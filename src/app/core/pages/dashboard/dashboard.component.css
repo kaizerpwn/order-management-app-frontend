@@ -2,3 +2,6 @@
   margin-left: 250px;
   padding: 20px;
 }
+body {
+  background-color: rgba(248, 249, 250, 1) !important;
+}
