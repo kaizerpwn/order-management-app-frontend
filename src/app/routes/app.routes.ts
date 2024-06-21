@@ -4,6 +4,7 @@ import { AuthLayoutComponent } from '../shared/components/layouts/auth-layout/au
 import { LoginComponent } from '../core/pages/login/login.component';
 import { DashboardLayoutComponent } from '../shared/components/layouts/dashboard-layout/dashboard-layout.component';
 import { DashboardComponent } from '../core/pages/dashboard/dashboard.component';
+import { RegisterComponent } from '../core/pages/register/register.component';
 
 export const routes: Routes = [
   {
@@ -25,6 +26,17 @@ export const routes: Routes = [
         path: '',
         title: 'Sign in - Order Management',
         component: LoginComponent
+      }
+    ]
+  },
+  {
+    path: 'register',
+    component: AuthLayoutComponent,
+    children: [
+      {
+        path: '',
+        title: 'Sign up - Order Management',
+        component: RegisterComponent
       }
     ]
   },

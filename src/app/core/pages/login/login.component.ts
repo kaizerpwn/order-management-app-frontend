@@ -1,8 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { LoginRequest } from '../../types/auth/login-request';
-import { UserService } from '../../services/user.service'; 
+import { LoginRequest } from '../../types/auth/login-request'; 
 import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
