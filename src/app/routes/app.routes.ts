@@ -7,6 +7,7 @@ import { DashboardComponent } from '../core/pages/dashboard/dashboard.component'
 import { RegisterComponent } from '../core/pages/register/register.component';
 import { OrdersComponent } from '../core/pages/orders/orders.component';
 import { UsersComponent } from '../core/pages/users/users.component';
+import { ProductsComponent } from '../core/pages/products/products.component';
 
 export const routes: Routes = [
   {
@@ -72,6 +73,17 @@ export const routes: Routes = [
         path: '',
         title: 'Users - Order Management',
         component: UsersComponent
+      }, 
+    ]
+  },
+  {
+    path: 'products',
+    component: DashboardLayoutComponent,
+    children: [
+      {
+        path: '',
+        title: 'Products - Order Management',
+        component: ProductsComponent
       }, 
     ]
   },
