@@ -31,7 +31,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": true,
+            "prerender": false,
             "ssr": {
               "entry": "server.ts"
             }
@@ -67,6 +67,7 @@
               "buildTarget": "order-management-app:build:production"
             },
             "development": {
+              "liveReload": true,
               "buildTarget": "order-management-app:build:development"
             }
           },

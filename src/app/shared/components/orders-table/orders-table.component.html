@@ -4,7 +4,7 @@
       <div class="custom-container">
         <div class="row justify-content-center">
           <div class="col-12">
-            <h1 class="mb-4">Orders</h1>
+            <h1>Orders</h1>
             <p class="opacity-50 ps-1 mb-4">
               Here is the list of all orders in the database.
             </p>
@@ -21,6 +21,7 @@
                         <th scope="col">Delivery Address</th>
                         <th scope="col">Source Address</th>
                         <th scope="col">Items</th>
+                        <th scope="col">Actions</th>
                       </tr>
                     </thead>
                     <tbody *ngFor="let order of orders">
@@ -79,6 +80,70 @@
                               </ul>
                             </div>
                           </div>
+                        </td>
+                        <td>
+                          <svg
+                            fill="#000000"
+                            viewBox="0 0 24 24"
+                            id="clipboard-edit"
+                            data-name="Flat Color"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="icon flat-color"
+                            width="30px"
+                            height="30px"
+                          >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                              id="SVGRepo_tracerCarrier"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                              <rect
+                                id="primary"
+                                x="2"
+                                y="4"
+                                width="16"
+                                height="18"
+                                rx="2"
+                                style="fill: #000000"
+                              ></rect>
+                              <path
+                                id="secondary"
+                                d="M20.31,8.3l1.4,1.4a1,1,0,0,1,0,1.4L15.1,17.71a1,1,0,0,1-.71.3H13a1,1,0,0,1-1-1V15.62a1,1,0,0,1,.3-.71L18.91,8.3A1,1,0,0,1,20.31,8.3ZM12,2H8A2,2,0,0,0,6,4V5A1,1,0,0,0,7,6h6a1,1,0,0,0,1-1V4A2,2,0,0,0,12,2Z"
+                                style="fill: #a7c957"
+                              ></path>
+                            </g>
+                          </svg>
+                          <svg
+                            fill="#000000"
+                            viewBox="0 0 24 24"
+                            id="recycle-bin-2"
+                            data-name="Flat Color"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="icon flat-color"
+                            width="30px"
+                            height="30px"
+                          >
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g
+                              id="SVGRepo_tracerCarrier"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            ></g>
+                            <g id="SVGRepo_iconCarrier">
+                              <path
+                                id="primary"
+                                d="M18.74,6.32A1,1,0,0,0,18,6h-.22l-.62-2.48A2,2,0,0,0,15.22,2H8.78A2,2,0,0,0,6.84,3.52L6.22,6H6a1,1,0,0,0-.73.32A1,1,0,0,0,5,7.07l.93,13.08a2,2,0,0,0,2,1.85H11a1,1,0,0,0,.89-.55L12.62,20H17a1,1,0,0,0,1-.92l1-12A1.05,1.05,0,0,0,18.74,6.32Z"
+                                style="fill: #000000"
+                              ></path>
+                              <path
+                                id="secondary"
+                                d="M17,22a3,3,0,1,1,3-3A3,3,0,0,1,17,22ZM20,7a1,1,0,0,0-1-1H5A1,1,0,0,0,5,8H19A1,1,0,0,0,20,7Z"
+                                style="fill: #a7c957"
+                              ></path>
+                            </g>
+                          </svg>
                         </td>
                       </tr>
                     </tbody>
