@@ -5,6 +5,8 @@ import { LoginComponent } from '../core/pages/login/login.component';
 import { DashboardLayoutComponent } from '../shared/components/layouts/dashboard-layout/dashboard-layout.component';
 import { DashboardComponent } from '../core/pages/dashboard/dashboard.component';
 import { RegisterComponent } from '../core/pages/register/register.component';
+import { OrdersComponent } from '../core/pages/orders/orders.component';
+import { UsersComponent } from '../core/pages/users/users.component';
 
 export const routes: Routes = [
   {
@@ -48,6 +50,28 @@ export const routes: Routes = [
         path: '',
         title: 'Dashboard - Order Management',
         component: DashboardComponent
+      }, 
+    ]
+  },
+  {
+    path: 'orders',
+    component: DashboardLayoutComponent,
+    children: [
+      {
+        path: '',
+        title: 'Orders - Order Management',
+        component: OrdersComponent
+      }, 
+    ]
+  },
+  {
+    path: 'users',
+    component: DashboardLayoutComponent,
+    children: [
+      {
+        path: '',
+        title: 'Users - Order Management',
+        component: UsersComponent
       }, 
     ]
   },
