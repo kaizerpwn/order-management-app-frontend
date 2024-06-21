@@ -1,0 +1,67 @@
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: 0.5rem;
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, 0.2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+}
+
+.custom-container {
+  width: 100%;
+}
+
+.opacity-50 {
+  opacity: 50%;
+}
+
+td {
+  vertical-align: middle;
+}
+
+svg {
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .table-responsive table {
+    font-size: 0.875rem;
+  }
+
+  .table-responsive td {
+    white-space: nowrap;
+  }
+
+  .table-responsive .list-group-item {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem 0;
+  }
+
+  .table-responsive .card {
+    background-color: #e9ecef;
+    border-radius: 0.25rem;
+  }
+
+  .table-responsive .card-body {
+    padding: 0.5rem;
+  }
+
+  .table-responsive .fw-bold {
+    font-weight: bold;
+  }
+}
