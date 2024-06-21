@@ -3,11 +3,12 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './routes/app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
-import { provideHttpClient, withFetch } from '@angular/common/http';  
+import { provideHttpClient, withFetch, withInterceptors } from '@angular/common/http';  
 import { StoreModule } from '@ngrx/store';
 import { UserReducer } from './shared/store/user/user.reducer';
 import { UserEffects } from './shared/store/user/user.effects';
 import { EffectsModule } from '@ngrx/effects';
+import { httpInterceptor } from './core/interceptors/http.interceptor';
 
 const initialState = {};
 
@@ -20,7 +21,7 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 
     provideClientHydration(),  
-    provideHttpClient(withFetch()), 
+    provideHttpClient(withInterceptors([httpInterceptor]), withFetch()), 
     importProvidersFrom(
       StoreModule.forRoot(rootReducer, { initialState }),
       EffectsModule.forRoot([UserEffects]),
