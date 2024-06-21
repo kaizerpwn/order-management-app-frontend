@@ -1,10 +1,9 @@
-import { Component } from '@angular/core';
-import { UsersTableComponent } from '../../../shared/components/users-table/users-table.component';
+import { Component } from '@angular/core'; 
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [UsersTableComponent],
+  imports: [],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })

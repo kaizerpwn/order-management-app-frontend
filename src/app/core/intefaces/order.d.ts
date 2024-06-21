@@ -8,7 +8,7 @@ export interface Order {
     total_amount:     number;
     delivery_address: Address;
     source_address:   Address;
-    order_items:      OrderItem[];
+    items:      OrderItem[];
 } 
 
 
