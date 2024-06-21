@@ -1,0 +1,111 @@
+<div class="sidebar">
+  <div class="d-flex align-items-center justify-content-center mt-4 mb-4">
+    <a [routerLink]="['/dashboard']">
+      <img src="/logo.png" width="150" height="85" style="padding: 0 10px" />
+    </a>
+  </div>
+  <ul class="nav flex-column">
+    <li class="nav-item">
+      <a class="nav-link active nav-link-item" [routerLink]="['/dashboard']">
+        <svg
+          fill="#444"
+          viewBox="0 0 24 24"
+          id="dashboard"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon flat-color"
+          width="35px"
+          height="35px"
+        >
+          <path
+            id="secondary"
+            d="M22,4V7a2,2,0,0,1-2,2H15a2,2,0,0,1-2-2V4a2,2,0,0,1,2-2h5A2,2,0,0,1,22,4ZM9,15H4a2,2,0,0,0-2,2v3a2,2,0,0,0,2,2H9a2,2,0,0,0,2-2V17A2,2,0,0,0,9,15Z"
+            style="fill: #a7c957"
+          ></path>
+          <path
+            id="primary"
+            d="M11,4v7a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V4A2,2,0,0,1,4,2H9A2,2,0,0,1,11,4Zm9,7H15a2,2,0,0,0-2,2v7a2,2,0,0,0,2,2h5a2,2,0,0,0,2-2V13A2,2,0,0,0,20,11Z"
+            style="fill: #444"
+          ></path>
+        </svg>
+        Dashboard
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-link-item" [routerLink]="['/users']">
+        <svg
+          fill="#444"
+          viewBox="0 0 24 24"
+          id="add-user-circle"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon flat-color"
+          width="35px"
+          height="35px"
+        >
+          <circle
+            id="primary"
+            cx="12"
+            cy="12"
+            r="10"
+            style="fill: #444"
+          ></circle>
+          <path
+            id="secondary"
+            d="M18,19.4a1,1,0,0,1-.44.93,10,10,0,0,1-11.06,0A1,1,0,0,1,6,19.4a6,6,0,0,1,2.84-4.53A4.94,4.94,0,0,1,7,11a5,5,0,0,1,5-5,6.74,6.74,0,0,1,.93.08,1,1,0,0,1-.32,2A4.07,4.07,0,0,0,12,8a3,3,0,1,0,3,3,1,1,0,0,1,2,0,4.94,4.94,0,0,1-1.88,3.87A6,6,0,0,1,18,19.4ZM21,6H20V5a1,1,0,0,0-2,0V6H17a1,1,0,0,0,0,2h1V9a1,1,0,0,0,2,0V8h1a1,1,0,0,0,0-2Z"
+            style="fill: #a7c957"
+          ></path>
+        </svg>
+        Users
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-link-item" [routerLink]="['/orders']">
+        <svg
+          fill="#444f"
+          viewBox="0 0 24 24"
+          id="inbox-in"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon flat-color"
+          width="35px"
+          height="35px"
+        >
+          <path
+            id="secondary"
+            d="M15.71,8.29a1,1,0,0,0-1.42,0L13,9.59V3a1,1,0,0,0-2,0V9.59L9.71,8.29A1,1,0,0,0,8.29,9.71l3,3a1,1,0,0,0,1.42,0l3-3A1,1,0,0,0,15.71,8.29Z"
+            style="fill: #a7c957"
+          ></path>
+          <path
+            id="primary"
+            d="M21,14.8l-2-10A1,1,0,0,0,18,4H16a1,1,0,0,0,0,2h1.18l1.6,8H16.62a2,2,0,0,0-1.79,1.11l-.45.89H9.62l-.45-.89A2,2,0,0,0,7.38,14H5.22l1.6-8H8A1,1,0,0,0,8,4H6a1,1,0,0,0-1,.8l-2,10A1.36,1.36,0,0,0,3,15v5a2,2,0,0,0,2,2H19a2,2,0,0,0,2-2V15A1.36,1.36,0,0,0,21,14.8Z"
+            style="fill: #444"
+          ></path>
+        </svg>
+        Orders
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-link-item" [routerLink]="['/logout']">
+        <svg
+          fill="#444"
+          viewBox="0 0 24 24"
+          id="log-in-5"
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon flat-color"
+          width="35px"
+          height="35px"
+        >
+          <path
+            id="secondary"
+            d="M17.62,11.31,14.5,9.17a1,1,0,0,0-1.5.69V11H3a1,1,0,0,0,0,2H13v1.14a1,1,0,0,0,1.5.69l3.12-2.14A.82.82,0,0,0,17.62,11.31Z"
+            style="fill: #a7c957"
+          ></path>
+          <path
+            id="primary"
+            d="M20,21H17a1,1,0,0,1,0-2h3V5H17a1,1,0,0,1,0-2h3a2,2,0,0,1,2,2V19A2,2,0,0,1,20,21Z"
+            style="fill: #444"
+          ></path>
+        </svg>
+        Log out
+      </a>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,38 @@
+.intro {
+  height: 100%;
+}
+
+table td,
+table th {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.card {
+  border-radius: 0.5rem;
+}
+
+.mask-custom {
+  background: rgba(24, 24, 16, 0.2);
+  border-radius: 2em;
+  backdrop-filter: blur(25px);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  background-clip: padding-box;
+}
+
+.custom-container {
+  width: 100%;
+}
+
+.opacity-50 {
+  opacity: 50%;
+}
+
+td {
+  vertical-align: middle;
+}
+
+svg {
+  cursor: pointer;
+}
