@@ -7,6 +7,8 @@ import { DashboardComponent } from '../core/pages/dashboard/dashboard.component'
 import { RegisterComponent } from '../core/pages/register/register.component';
 import { OrdersComponent } from '../core/pages/orders/orders.component';
 import { UsersComponent } from '../core/pages/users/users.component';
+import { ProductsComponent } from '../core/pages/products/products.component';
+import { authGuard } from '../core/guards/auth-guard.guard';
 
 export const routes: Routes = [
   {
@@ -45,6 +47,7 @@ export const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardLayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: '',
@@ -56,6 +59,7 @@ export const routes: Routes = [
   {
     path: 'orders',
     component: DashboardLayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: '',
@@ -67,11 +71,24 @@ export const routes: Routes = [
   {
     path: 'users',
     component: DashboardLayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: '',
         title: 'Users - Order Management',
         component: UsersComponent
+      }, 
+    ]
+  },
+  {
+    path: 'products',
+    component: DashboardLayoutComponent,
+    canActivate: [authGuard],
+    children: [
+      {
+        path: '',
+        title: 'Products - Order Management',
+        component: ProductsComponent
       }, 
     ]
   },

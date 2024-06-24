@@ -1,0 +1,22 @@
+.card {
+  background: linear-gradient(to bottom, #f8f9fa, #e9ecef);
+}
+.card {
+  border-radius: 15px;
+  color: #444;
+  width: 300px;
+  height: 120px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.center-icon {
+  display: flex;
+  justify-content: center;
+  border-radius: 13px;
+  align-items: center;
+  background-color: #a7c957;
+}
+
+.text-opacity {
+  opacity: 60%;
+}

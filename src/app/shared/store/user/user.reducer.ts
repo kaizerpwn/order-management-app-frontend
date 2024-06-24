@@ -1,4 +1,4 @@
-import { createReducer, on } from '@ngrx/store';
+import { createFeatureSelector, createReducer, createSelector, on } from '@ngrx/store';
 import * as UserActions from './user.actions';
 import { User } from '../../../core/intefaces/user';
 
@@ -12,13 +12,18 @@ const initialState: UserState = {
   user: null,
   loading: false,
   error: null
-};
+}; 
 
 export const UserReducer = createReducer(
   initialState,
   on(UserActions.login, (state) => ({
     ...state,
     loading: true,
+    error: null
+  })),
+  on(UserActions.logout, (state) => ({
+    user: null,
+    loading: false,
     error: null
   })),
   on(UserActions.loginSuccess, (state, { user }) => ({

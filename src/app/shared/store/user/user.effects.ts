@@ -19,6 +19,16 @@ export class UserEffects {
     ),
     { dispatch: false } 
   );
+  
+  logout$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(UserActions.logout), 
+      tap(action => {
+        localStorage.setItem('user', JSON.stringify(null)); 
+      })
+    ),
+    { dispatch: false } 
+  );
 
   getUser$ = createEffect(() =>
     this.actions$.pipe(
@@ -40,5 +50,5 @@ export class UserEffects {
         )
       )
     )
-  );
+  ); 
 }
