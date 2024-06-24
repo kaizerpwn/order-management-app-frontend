@@ -6,6 +6,10 @@ export const login = createAction(
     '[User] Login',
     props<{ loginRequest: LoginRequest }>()
 );
+
+export const logout = createAction(
+    '[User] Logout'
+);
   
 export const loginSuccess = createAction(
     '[User] Login Success',

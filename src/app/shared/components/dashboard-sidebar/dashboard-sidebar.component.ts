@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../../core/services/auth.service';
 
 @Component({
   selector: 'app-dashboard-sidebar',
@@ -9,5 +10,10 @@ import { RouterLink } from '@angular/router';
   styleUrl: './dashboard-sidebar.component.css'
 })
 export class DashboardSidebarComponent {
+  constructor(private authService: AuthService, private router: Router) {}
 
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/login']);
+  }
 }
