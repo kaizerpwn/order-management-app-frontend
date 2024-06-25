@@ -1,5 +1,5 @@
-import { User } from "../../core/intefaces/user";
+import { User } from '../../core/intefaces/user';
 
 export interface AppState {
-    loggedUser: User | null;
+  user: User | null;
 }
