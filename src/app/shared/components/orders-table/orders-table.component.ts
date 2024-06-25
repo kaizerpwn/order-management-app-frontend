@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './orders-table.component.html',
-  styleUrl: './orders-table.component.css'
+  styleUrl: './orders-table.component.css',
 })
 export class OrdersTableComponent {
   orders: Order[] = [];
@@ -19,11 +19,10 @@ export class OrdersTableComponent {
     this.orderService.getAllOrders().subscribe({
       next: (response: Order[]) => {
         this.orders = response;
-        console.log(this.orders)
       },
       error: (error: Error) => {
         console.error(error);
-      }
+      },
     });
   }
 }
