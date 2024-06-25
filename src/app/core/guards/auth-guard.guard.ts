@@ -28,8 +28,6 @@ export const authGuard: CanActivateFn = async (
     '/orders',
   ];
 
-  console.log(currentUser);
-
   if (
     protectedRoutes.includes(state.url) &&
     (!currentUser || currentUser.role !== 'admin')
