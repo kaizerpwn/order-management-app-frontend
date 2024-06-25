@@ -1,5 +1,5 @@
-import { User } from '../../core/intefaces/user';
+import { UserState } from './user/user.reducer';
 
 export interface AppState {
-  user: User | null;
+  user: UserState;
 }
