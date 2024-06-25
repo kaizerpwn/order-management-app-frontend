@@ -1,10 +1,17 @@
 <div class="sidebar">
   <div class="d-flex align-items-center justify-content-center mt-4 mb-4">
+    @if (user?.role === 'admin') {
     <a [routerLink]="['/dashboard']">
       <img src="/logo.png" width="150" height="85" style="padding: 0 10px" />
     </a>
+    } @else {
+    <a [routerLink]="['/user']">
+      <img src="/logo.png" width="150" height="85" style="padding: 0 10px" />
+    </a>
+    }
   </div>
   <ul class="nav flex-column">
+    @if (user?.role === 'admin') {
     <li class="nav-item">
       <a class="nav-link active nav-link-item" [routerLink]="['/dashboard']">
         <svg
@@ -169,6 +176,7 @@
         Products
       </a>
     </li>
+    }
     <li class="nav-item cursor-pointer">
       <a class="nav-link nav-link-item" (click)="logout()">
         <svg
